@@ -15,7 +15,7 @@ I built Python, SQL, Spark, and Databricks pipelines to integrate crop, weather,
 
 Dataset: **6,823 county-year/crop observations**. These are cross-validation scores, not test-set results or claims about the latest deployed model.
 
-An October 2026 audit traced a previously displayed 0.6440 value to a hard-coded dashboard constant without evaluation-run provenance. It also identified an index-alignment issue in out-of-fold prediction storage that affected stored predictions, residuals, and downstream anomaly counts, but not the fold-level CV arrays used to calculate R². The previously reported 31-anomaly / 0.45% figure is withdrawn pending a canonical rerun.
+An October 2026 audit traced a previously displayed 0.6440 value to a hard-coded dashboard constant without evaluation-run provenance. It also identified an index-alignment issue in out-of-fold prediction storage that affected stored predictions, residuals, and downstream anomaly counts, but not the fold-level CV arrays used to calculate R². After the fix, a canonical rerun regenerated stored predictions and residuals and confirmed 31 anomalous county-years (0.45% of observations).
 
 [Read the methodology and full audit](https://whwan4570.github.io/terracast-evaluation.html).
 
